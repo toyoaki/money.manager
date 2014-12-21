@@ -1,4 +1,4 @@
-binarytree-calculator
+money.manager
 =====================
 
-Simple calculator using binary tree
+Simple money manager app

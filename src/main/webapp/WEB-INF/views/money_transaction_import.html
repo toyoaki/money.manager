@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF8"/>
+  
+ 	<head>
+	    <title th:text="#{money.transaction.import.title}">Importação de Dados</title>
+	    
+	    <script th:src="@{/resources/js/3rdparty/jquery/jquery-2.1.1.js}" charset="UTF-8"></script>
+	    <script th:src="@{/resources/js/3rdparty/d3/d3.js}" charset="UTF-8"></script>
+	    <script th:src="@{/resources/js/3rdparty/bootstrap/bootstrap.js}" charset="UTF-8"></script>
+	    <script th:src="@{/resources/js/app/pages/money_transaction_import.js}" charset="UTF-8"></script>
+	    
+	    <link rel="stylesheet" type="text/css" media="all" th:href="@{/resources/style/3rdparty/bootstrap/bootstrap.css}" />
+	    <link rel="stylesheet" type="text/css" media="all" th:href="@{/resources/style/app/pages/money_transaction_import.css}" />
+ 	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-container">
+				<form id="fileForm" method="POST" enctype="multipart/form-data" role="form">
+				
+					<div class="panel panel-default">
+					
+						<div class="panel-heading">
+							<h3 class="panel-title">Importação de Dados</h3>
+						</div>
+						
+						<!-- File Upload Component -->
+				  		<div class="panel-body">
+							<div class="form-group">
+								<label>Arquivo</label>
+								
+								<div id="fileUploadContainer">
+									<div class="input-group">
+										<input type="text" class="form-control" readonly="true"  placeholder="Selecione arquivo a ser importado"/>
+										<div class="input-group-btn">
+											<span class="btn btn-primary btn-file">
+												Selecionar<input type="file" name="file"/>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary pull-right btn-import-data" onclick="page.fileUpload.upload()">Importar Dados</button>
+						</div>
+						
+					</div>
+					
+					<div>							
+						<div id="moneyTransactionsContainer"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
